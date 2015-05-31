@@ -1,29 +1,38 @@
 {
-    "name": "jmkeyes-razor",
-    "version": "0.0.1",
-    "author": "jmkeyes",
-    "summary": "Module for managing PuppetLabs Razor.",
-    "license": "Apache-2.0",
-    "source": "https://github.com/jmkeyes/puppet-razor",
-    "project_page": "https://github.com/jmkeyes/puppet-razor",
-    "issues_url": "https://github.com/jmkeyes/puppet-razor/issues",
-    "requirements": [
-        {
-            "name": "puppet",
-            "version_requirement": ">= 3.7.0"
-        }
-    ],
-    "operatingsystem_support": [
-        {
-            "operatingsystem":"RedHat",
-            "operatingsystemrelease": [ "6.0", "7.0" ]
-        },
-        {
-            "operatingsystem": "Debian",
-            "operatingsystemrelease": [ "7.0", "8.0" ]
-        }
-    ], 
-    "dependencies": [
-        {"name":"puppetlabs/stdlib","version_requirement":">= 4.6.0 < 5.0.0"}
-    ]
+  "name": "jmkeyes-razor",
+  "version": "0.0.2",
+  "author": "jmkeyes",
+  "summary": "Module for managing PuppetLabs Razor.",
+  "license": "Apache-2.0",
+  "source": "https://github.com/jmkeyes/puppet-razor",
+  "project_page": "https://github.com/jmkeyes/puppet-razor",
+  "issues_url": "https://github.com/jmkeyes/puppet-razor/issues",
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 3.7.0"
+    }
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "6.0",
+        "7.0"
+      ]
+    },
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "7.0",
+        "8.0"
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 4.6.0 < 5.0.0"
+    }
+  ]
 }
