@@ -21,5 +21,12 @@ class razor::server::config {
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
+  } ->
+
+  file { $::razor::server::repo_store_root:
+    ensure => directory,
+    owner  => 'razor',
+    group  => 'razor',
+    mode   => '0755',
   }
 }
