@@ -1,8 +1,8 @@
 # == Class: razor::server
 
 class razor::server (
-  $database_url    = undef,
-  $repo_store_root = undef,
+  $database_url,
+  $repo_store_root,
   $package_name    = undef,
   $package_ensure  = undef,
   $service_name    = undef,
