@@ -39,4 +39,16 @@ class razor::server::config {
     target  => $::razor::server::repo_store_root,
     require => Staging::File['microkernel.tar'],
   }
+
+  postgresql::validate_db_connection { 'razor_database_connection':
+    database_host     => $::razor::server::db_hostname,
+    database_name     => $::razor::server::db_database,
+    database_username => $::razor::server::db_username,
+    database_password => $::razor::server::db_password,
+  } ->
+
+  exec { 'migrate_razor_database':
+    command => '/usr/sbin/razor-admin -e all migrate-database',
+    unless  => '/usr/sbin/razor-admin -e all check-migrations',
+  }
 }
