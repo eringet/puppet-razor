@@ -32,10 +32,6 @@ More documentation will be available soon.
   * This module does not setup or maintain the DHCP or TFTP servers. Those
     should be handled separately by following the Razor installation guide.
 
-  * This module does not yet install and maintain it's database. You'll
-    need to install and manage a PostgreSQL database for Razor outside of
-    this module. I recommend `puppetlabs/postgresql` for ease of use.
-
   * I'd like to see a native Puppet type/provider for managing Razor through
     it's API. A lot of Razor's configuration could be managed though it's API
     very effectively.
