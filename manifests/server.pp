@@ -1,8 +1,12 @@
 # == Class: razor::server
 
 class razor::server (
-  $database_url,
   $repo_store_root,
+  $manage_database = true,
+  $db_hostname     = 'localhost',
+  $db_database     = 'razor',
+  $db_username     = 'razor',
+  $db_password     = 'razor',
   $package_name    = undef,
   $package_ensure  = undef,
   $service_name    = undef,
@@ -17,6 +21,13 @@ class razor::server (
   contain '::razor::server::install'
   contain '::razor::server::config'
   contain '::razor::server::service'
+
+  if $manage_database {
+    contain '::razor::server::database'
+
+    Class['::razor::server::database'] ->
+    Class['::razor::server::config']
+  }
 
   Class['::razor::server::install'] ->
   Class['::razor::server::config'] ~>

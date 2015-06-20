@@ -5,7 +5,11 @@ class razor::server::config {
     fail("Use of private class ${name} from ${caller_module_name}")
   }
 
-  validate_string($::razor::server::database_url)
+  validate_string($::razor::server::db_hostname)
+  validate_string($::razor::server::db_database)
+  validate_string($::razor::server::db_username)
+  validate_string($::razor::server::db_password)
+
   validate_string($::razor::server::repo_store_root)
 
   file { '/etc/razor':

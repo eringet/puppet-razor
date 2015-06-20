@@ -1,3 +1,11 @@
+<%-
+  url = 'jdbc:postgresql://%s/%s?user=%s&password=%s' % [
+    scope['::razor::server::db_hostname'],
+    scope['::razor::server::db_database'],
+    scope['::razor::server::db_username'],
+    scope['::razor::server::db_password'],
+  ]
+-%>
 ---
 # This is the configuration file for the Razor server. For each
 # environment, the file contains a hash of configuration values. The
@@ -8,7 +16,7 @@
 all:
   # The *database_url* setting must be a connection URL for
   # (Sequel)[http://sequel.rubyforge.org/rdoc/files/doc/opening_databases_rdoc.html]
-  database_url: '<%= scope['::razor::server::database_url'] %>'
+  database_url: '<%= url %>'
 
   # This section configures authentication for the Razor server.
   # Authentication applies to access to the `/api` URL path only.
