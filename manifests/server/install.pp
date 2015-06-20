@@ -16,4 +16,8 @@ class razor::server::install {
   package { $package_name:
     ensure => $package_ensure,
   }
+
+  staging::file { 'microkernel.tar':
+    source => 'http://links.puppetlabs.com/razor-microkernel-latest.tar',
+  }
 }

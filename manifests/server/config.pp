@@ -28,5 +28,11 @@ class razor::server::config {
     owner  => 'razor',
     group  => 'razor',
     mode   => '0755',
+  } ->
+
+  staging::extract { 'microkernel.tar':
+    creates => "${::razor::server::repo_store_root}/microkernel",
+    target  => $::razor::server::repo_store_root,
+    require => Staging::File['microkernel.tar'],
   }
 }
