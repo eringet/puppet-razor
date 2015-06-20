@@ -1,8 +1,8 @@
 # == Class: razor::server
 
 class razor::server (
-  $repo_store_root,
   $manage_database = true,
+  $repo_store_root = '/var/lib/razor/repo-store',
   $db_hostname     = 'localhost',
   $db_database     = 'razor',
   $db_username     = 'razor',
