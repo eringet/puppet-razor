@@ -5,9 +5,9 @@ class razor::server::service {
     fail("Use of private class ${name} from ${caller_module_name}")
   }
 
-  $service_name   = pick($::razor::service_name,   'razor-server')
-  $service_ensure = pick($::razor::service_ensure, 'running')
-  $service_enable = pick($::razor::service_enable, true)
+  $service_name   = pick($::razor::server::service_name,   'razor-server')
+  $service_ensure = pick($::razor::server::service_ensure, 'running')
+  $service_enable = pick($::razor::server::service_enable, true)
 
   validate_string($service_name)
 
