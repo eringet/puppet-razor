@@ -1,6 +1,6 @@
 {
   "name": "jmkeyes-razor",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "jmkeyes",
   "summary": "Module for managing PuppetLabs Razor.",
   "license": "Apache-2.0",
