@@ -2,6 +2,18 @@ fixtures:
   symlinks:
     razor: "#{source_dir}"
   repositories:
+    apt:
+      repo: 'https://github.com/puppetlabs/puppetlabs-apt.git'
+      tag:  '2.1.0'
+    concat:
+      repo: 'https://github.com/puppetlabs/puppetlabs-concat.git'
+      tag:  '1.2.3'
+    postgresql:
+      repo: 'https://github.com/puppetlabs/puppetlabs-postgresql.git'
+      tag:  '4.3.0'
+    staging:
+      repo: 'https://github.com/nanliu/puppet-staging.git'
+      tag:  '1.0.3'
     stdlib:
       repo: 'https://github.com/puppetlabs/puppetlabs-stdlib.git'
       tag:  '4.6.0'

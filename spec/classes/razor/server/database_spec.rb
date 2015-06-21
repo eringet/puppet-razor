@@ -1,4 +1,4 @@
-describe 'razor::server::service' do
+describe 'razor::server::database' do
   context 'without ::razor::server' do
     it { should raise_error(Puppet::Error, /Use of private class #{class_name} from /) }
   end
@@ -24,8 +24,8 @@ describe 'razor::server::service' do
         end
 
         it { should compile.with_all_deps }
-        it { should create_class('razor::server::service') }
-        it { should contain_service('razor-server').with(default_params) }
+        it { should create_class('razor::server::database') }
+        it { should contain_postgresql__server__db('razor') }
       end
     end
   end
