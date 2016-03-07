@@ -8,6 +8,7 @@
  1. [Overview](#overview)
  2. [Description](#description)
  3. [Todo](#todo)
+ 4. [Contributors](#contributors)
 
 ## Overview
 
@@ -36,3 +37,8 @@ More documentation will be available soon.
     it's API. A lot of Razor's configuration could be managed though it's API
     very effectively.
 
+## Contributors
+
+Thanks to the following people who have contributed to this module!
+
+  * [Danny](https://github.com/kemra102)
