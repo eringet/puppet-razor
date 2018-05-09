@@ -27,7 +27,7 @@ describe 'razor::server::install' do
         it { should contain_package('razor-server').with(default_params) }
 
         it do
-          should contain_staging__file('microkernel.tar')
+          should contain_archive('microkernel.tar')
             .with_source('http://links.puppetlabs.com/razor-microkernel-latest.tar')
         end
       end

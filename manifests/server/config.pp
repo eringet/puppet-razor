@@ -49,12 +49,6 @@ class razor::server::config {
     mode   => '0755',
   } ->
 
-  staging::extract { 'microkernel.tar':
-    creates => "${::razor::server::repo_store_root}/microkernel",
-    target  => $::razor::server::repo_store_root,
-    require => Staging::File['microkernel.tar'],
-  }
-
   postgresql::validate_db_connection { 'razor_database_connection':
     database_host     => $::razor::server::db_hostname,
     database_name     => $::razor::server::db_database,

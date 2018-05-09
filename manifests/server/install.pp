@@ -32,7 +32,12 @@ class razor::server::install {
     ensure => $package_ensure,
   }
 
-  staging::file { 'microkernel.tar':
-    source => 'http://links.puppetlabs.com/razor-microkernel-latest.tar',
+  archive { 'microkernel.tar':
+    source       => 'http://links.puppetlabs.com/razor-microkernel-latest.tar',
+    path         => /tmp/microkernel.tar,
+    proxy_server => $proxy_server,
+    extract      => true,
+    extract_path => $::razor::server::repo_store_root,
+    creates      => $::razor::server::repo_store_root/microkernel
   }
 }
