@@ -53,15 +53,6 @@ describe 'razor::server::config' do
         end
 
         it do
-          should contain_staging__extract('microkernel.tar')
-            .that_requires("File[#{repo_store_root}]")
-            .with({
-              :creates => "#{repo_store_root}/microkernel",
-              :target  => repo_store_root,
-            })
-        end
-
-        it do
           should contain_postgresql__validate_db_connection('razor_database_connection')
             .that_comes_before('Exec[migrate_razor_database]')
         end

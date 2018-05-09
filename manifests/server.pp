@@ -24,6 +24,7 @@ class razor::server (
   $db_password     = 'razor',
   $package_name    = undef,
   $package_ensure  = undef,
+  $proxy_server    = undef,
   $service_name    = undef,
   $service_ensure  = undef,
   $service_enable  = undef,
