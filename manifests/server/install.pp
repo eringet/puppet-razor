@@ -38,6 +38,6 @@ class razor::server::install {
     proxy_server => $proxy_server,
     extract      => true,
     extract_path => $::razor::server::repo_store_root,
-    creates      => $::razor::server::repo_store_root/microkernel
+    creates      => $::razor::server::repo_store_root/microkernel,
   }
 }
