@@ -27,9 +27,9 @@ class razor::server::database {
 
   class { '::postgresql::server': }
 
-  postgresql::server::db { $::razor::server::db_database:
-    user     => $::razor::server::db_username,
-    password => $::razor::server::db_password,
+  postgresql::server::db { "${::razor::server::db_database}":
+    user     => "${::razor::server::db_username}",
+    password => "${::razor::server::db_password}",
     grant    => 'all',
   }
 }
