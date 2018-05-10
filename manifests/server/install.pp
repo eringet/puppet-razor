@@ -37,7 +37,7 @@ class razor::server::install {
     path         => '/tmp/microkernel.tar',
     proxy_server => $proxy_server,
     extract      => true,
-    extract_path => $::razor::server::repo_store_root,
-    creates      => $::razor::server::repo_store_root/microkernel,
+    extract_path => "$::razor::server::repo_store_root",
+    creates      => "$::razor::server::repo_store_root/microkernel",
   }
 }
