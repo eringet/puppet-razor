@@ -28,6 +28,6 @@ class razor::server::database {
 
   postgresql::server::db { "${::razor::server::db_database}":
     user     => "${::razor::server::db_username}",
-    password => "${::razor::server::db_password}",
+    password => postgresql_password("${::razor::server::db_username}", "${::razor::server::db_password}"),
   }
 }
