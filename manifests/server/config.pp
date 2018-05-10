@@ -25,8 +25,6 @@ class razor::server::config {
   validate_string($::razor::server::db_username)
   validate_string($::razor::server::db_password)
 
-  validate_string($::razor::server::repo_store_root)
-
   file { '/etc/razor':
     ensure => directory,
     owner  => 'root',
@@ -40,13 +38,6 @@ class razor::server::config {
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-  } ->
-
-  file { $::razor::server::repo_store_root:
-    ensure => directory,
-    owner  => 'razor',
-    group  => 'razor',
-    mode   => '0755',
   } ->
 
   postgresql::validate_db_connection { 'razor_database_connection':

@@ -24,13 +24,21 @@ class razor::server::install {
   $package_ensure = pick($::razor::server::package_ensure, 'installed')
 
   validate_string($package_name)
-
   validate_string($package_ensure)
   validate_re($package_ensure, '^(present|latest|installed|[._0-9a-zA-Z:-]+)$')
+  validate_string($::razor::server::repo_store_root)
+
 
   package { $package_name:
     ensure => $package_ensure,
   }
+
+  file { $::razor::server::repo_store_root:
+    ensure => directory,
+    owner  => 'razor',
+    group  => 'razor',
+    mode   => '0755',
+  } ->
 
   archive { 'microkernel.tar':
     source       => 'http://links.puppetlabs.com/razor-microkernel-latest.tar',
